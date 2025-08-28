@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:status_bar_control/status_bar_control.dart';
+import 'package:status_bar_control_plus/status_bar_control_plus.dart';
 
 void main() => runApp(const StatusBarControlApp());
 
@@ -44,7 +44,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
     double? statusBarHeight;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      statusBarHeight = await StatusBarControl.getHeight;
+      statusBarHeight = await StatusBarControlPlus.getHeight;
     } on PlatformException {
       statusBarHeight = 0.0;
     }
@@ -68,7 +68,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
   }
 
   void updateStatusBar() {
-    StatusBarControl.setColor(
+    StatusBarControlPlus.setColor(
         _statusBarColor!.withOpacity(_statusBarOpacity),
         animated: _statusBarColorAnimated);
   }
@@ -83,7 +83,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
     setState(() {
       _statusBarStyle = val;
     });
-    StatusBarControl.setStyle(val);
+    StatusBarControlPlus.setStyle(val);
   }
 
   void colorNavBarChanged(Color val) {
@@ -94,7 +94,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
   }
 
   void updateNavBar() {
-    StatusBarControl.setNavigationBarColor(_navBarColor!,
+    StatusBarControlPlus.setNavigationBarColor(_navBarColor!,
         animated: _navBarColorAnimated);
   }
 
@@ -102,7 +102,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
     setState(() {
       _navBarStyle = val;
     });
-    StatusBarControl.setNavigationBarStyle(val);
+    StatusBarControlPlus.setNavigationBarStyle(val);
   }
 
   @override
@@ -110,7 +110,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: const Text('Statusbar Control Example'),
+        title: const Text('Statusbar Control Plus Example'),
       ),
       body: SafeArea(
         child: Scrollbar(
@@ -176,7 +176,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
                   setState(() {
                     _statusBarHidden = val;
                   });
-                  StatusBarControl.setHidden(_statusBarHidden,
+                  StatusBarControlPlus.setHidden(_statusBarHidden,
                       animation: _statusBarAnimation);
                 },
               ),
@@ -231,7 +231,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
                   setState(() {
                     _statusBarTranslucent = val;
                   });
-                  StatusBarControl.setTranslucent(_statusBarTranslucent);
+                  StatusBarControlPlus.setTranslucent(_statusBarTranslucent);
                 },
               ),
               const Divider(height: 25.0),
@@ -243,7 +243,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
                   setState(() {
                     _loadingIndicator = val;
                   });
-                  StatusBarControl.setNetworkActivityIndicatorVisible(
+                  StatusBarControlPlus.setNetworkActivityIndicatorVisible(
                       _loadingIndicator);
                 },
               ),
@@ -315,7 +315,7 @@ class _StatusBarControlAppState extends State<StatusBarControlApp> {
                   setState(() {
                     _fullscreenMode = val;
                   });
-                  StatusBarControl.setFullscreen(_fullscreenMode);
+                  StatusBarControlPlus.setFullscreen(_fullscreenMode);
                 },
               ),
             ],
