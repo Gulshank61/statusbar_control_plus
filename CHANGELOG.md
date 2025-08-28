@@ -1,3 +1,8 @@
+## 3.3.0
+- Migrated Android implementation from Java → **Kotlin**
+- Updated `build.gradle` to match latest Flutter SDK & Gradle 8
+- Package renamed to `status_bar_control_plus` and re-published
+
 ## 3.2.1
 
 - Fix License and Readme

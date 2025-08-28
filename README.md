@@ -1,30 +1,47 @@
-# Status Bar Control
+# Status Bar Control Plus
 
-[![Flutter_Tests](https://github.com/rafaelmaeuer/flutter_statusbar_manager/actions/workflows/tests.yml/badge.svg)](https://github.com/rafaelmaeuer/flutter_statusbar_manager/actions/workflows/tests.yml)
+[![Flutter_Tests](https://github.com/Gulshank61/flutter_statusbar_manager/actions/workflows/tests.yml/badge.svg)](https://github.com/Gulshank61/flutter_statusbar_manager/actions/workflows/tests.yml)
 
-Since [flutter_statusbar_manager](https://pub.dev/packages/flutter_statusbar_manager) is no longer maintained, this package is a re-publish and will be occasionally updated for continued use in existing projects.
+Since [status_bar_control](https://pub.dev/packages/status_bar_control) is no longer maintained, this package is a re-publish and will be occasionally updated for continued use in existing projects.
 
-<a href="https://www.buymeacoffee.com/rafaelmaeuer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕️&slug=rafaelmaeuer&button_colour=F2F2F2&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
+<a href="https://www.buymeacoffee.com/gulshank61"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕️&slug=gulshank61&button_colour=F2F2F2&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
 
 ### About
 
-`Status Bar Control`, lets you control the status bar color, style (theme), visibility, and translucent properties across iOS and Android. With some added bonus for Android to control the Navigation Bar.
+`Status Bar Control Plus`, lets you control the status bar color, style (theme), visibility, and translucent properties across iOS and Android. With some added bonus for Android to control the Navigation Bar.
 
 This plugin is based on React Native's [StatusBar](https://facebook.github.io/react-native/docs/statusbar) component.
 
 The Navigation Bar code was taken from the awesome [flutter-screen-theme-plugin](https://github.com/g123k/flutter-screen-theme-plugin).
 
-The plugin was tested with iOS 15 and Android 12 (API 31).
+The plugin was tested with iOS 16 and Android 13 (API 34).
 
 ### Last Updates
+v3.3.0
+- Migrated Android implementation from Java → **Kotlin**
+- Updated `build.gradle` to match latest Flutter SDK & Gradle 8
+- Package renamed to `status_bar_control_plus` and re-published
 
-- v3.2.0 rename to `status_bar_control` and re-publish to pub.dev
-- v3.1.2 add `cutout`-mode for Android and `SafeArea` to demo app
-- v3.1.1 resolve `UIOverlay`-deprecations and update of demo app
-- v3.1.0 support for Android V2 thanks to [jWinterDay](https://github.com/jWinterDay) and [rafaelmaeuer](https://github.com/rafaelmaeuer)
-- v3.0.1 compatible with flutter web thanks to [rafaelmaeuer](https://github.com/rafaelmaeuer)
-- v3.0.0 support for null safety thanks to [NarHakobyan](https://github.com/NarHakobyan)
-- v2.0.0 compatible with AndroidX thanks to [lorenzOliveto](https://github.com/lorenzOliveto)
+v3.2.0
+- rename to `status_bar_control` and re-publish to pub.dev
+
+v3.1.2
+- add `cutout`-mode for Android and `SafeArea` to demo app
+
+v3.1.1
+- resolve `UIOverlay`-deprecations and update of demo app
+
+v3.1.0
+- support for Android V2 thanks to [jWinterDay](https://github.com/jWinterDay) and [Gulshank61](https://github.com/Gulshank61)
+
+v3.0.1
+- compatible with flutter web thanks to [rafaelmaeuer](https://github.com/rafaelmaeuer)
+
+v3.0.0
+- support for null safety thanks to [NarHakobyan](https://github.com/NarHakobyan)
+
+v2.0.0
+- compatible with AndroidX thanks to [lorenzOliveto](https://github.com/lorenzOliveto)
 
 See [CHANGELOG](CHANGELOG.md) for a complete list of changes.
 
@@ -36,20 +53,20 @@ Build the example project for iOS and Android from the [example](./example) fold
 
 |                                                                  Status Bar Color                                                                  |                                                                       Status Bar Hide                                                                        |                                                                Navigation Bar                                                                |
 | :------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Demo App Android Status Bar](https://raw.githubusercontent.com/rafaelmaeuer/flutter_statusbar_control/main/example/assets/android_statusbar.gif) | ![Demo App Android Status Bar hide](https://raw.githubusercontent.com/rafaelmaeuer/flutter_statusbar_control/main/example/assets/android_statusbar_hide.gif) | ![Demo App Android Nav Bar](https://raw.githubusercontent.com/rafaelmaeuer/flutter_statusbar_control/main/example/assets/android_navbar.gif) |
+| ![Demo App Android Status Bar](https://raw.githubusercontent.com/Gulshank61/statusbar_control_plus/main/example/assets/android_statusbar.gif) | ![Demo App Android Status Bar hide](https://raw.githubusercontent.com/Gulshank61/statusbar_control_plus/main/example/assets/android_statusbar_hide.gif) | ![Demo App Android Nav Bar](https://raw.githubusercontent.com/Gulshank61/statusbar_control_plus/main/example/assets/android_navbar.gif) |
 
 #### iOS
 
 |                                                          Demo Iphone 8                                                          |                                                          Demo Iphone X                                                          |
 | :-----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
-| ![Demo App Iphone 8](https://raw.githubusercontent.com/rafaelmaeuer/flutter_statusbar_control/main/example/assets/iphone_8.gif) | ![Demo App Iphone X](https://raw.githubusercontent.com/rafaelmaeuer/flutter_statusbar_control/main/example/assets/iphone_x.gif) |
+| ![Demo App Iphone 8](https://raw.githubusercontent.com/Gulshank61/statusbar_control_plus/main/example/assets/iphone_8.gif) | ![Demo App Iphone X](https://raw.githubusercontent.com/rafaelmaeuer/statusbar_control_plus/main/example/assets/iphone_x.gif) |
 
 *Note: not all of the shown examples might still work in the latest versions of Android or iOS*
 
 ## Installation
 
 ```bash
-status_bar_control: ^3.2.1
+status_bar_control_plus : ^3.2.0
 ```
 
 to your `pubspec.yaml` and run
@@ -84,7 +101,7 @@ On Android add the following in your `styles.xml` (cutout-mode for API >27):
 Import the plugin in `lib/main.dart` like this:
 
 ```dart
-import 'package:status_bar_control/status_bar_control.dart';
+import 'package:status_bar_control_plus/status_bar_control_plus.dart';
 ```
 
 ## Methods
@@ -100,7 +117,7 @@ The `setColor` method will set the status bar background color. On iOS the metho
 | animated  | `bool`  |  false  |    No    | Whether or not to animate the color change.                     |
 
 ```dart
-await StatusBarControl.setColor(Colors.green, animated:true);
+await StatusBarControlPlus.setColor(Colors.green, animated:true);
 ```
 
 #### setTranslucent
@@ -113,7 +130,7 @@ The `setTranslucent` method will set the status bar translucent status. On iOS t
 | translucent | `bool` |  none   |   Yes    | Whether or not the status bar will be translucent. |
 
 ```dart
-await StatusBarControl.setTranslucent(true);
+await StatusBarControlPlus.setTranslucent(true);
 ```
 
 #### setHidden
@@ -127,7 +144,7 @@ The `setHidden` will hide the status bar.
 | animation | `StatusBarAnimation` | StatusBarAnimation.NONE |    No    | The hiding animation to use `(iOS only)`. |
 
 ```dart
-await StatusBarControl.setHidden(true, animation:StatusBarAnimation.SLIDE);
+await StatusBarControlPlus.setHidden(true, animation:StatusBarAnimation.SLIDE);
 ```
 
 #### setStyle
@@ -140,7 +157,7 @@ The `setStyle` method will set the status bar theme.
 | style     | `StatusBarStyle` |  none   |   Yes    | The status bar theme to use for styling, can either be light, dark, default. |
 
 ```dart
-await StatusBarControl.setStyle(StatusBarStyle.DARK_CONTENT);
+await StatusBarControlPlus.setStyle(StatusBarStyle.DARK_CONTENT);
 ```
 
 #### setNetworkActivityIndicatorVisible
@@ -153,7 +170,7 @@ The `setNetworkActivityIndicatorVisible` method will show or hide the activity i
 | visible   | `bool` |  none   |   Yes    | Whether or not to show the activity indicator. |
 
 ```dart
-await StatusBarControl.setNetworkActivityIndicatorVisible(true);
+await StatusBarControlPlus.setNetworkActivityIndicatorVisible(true);
 ```
 
 #### getHeight
@@ -162,7 +179,7 @@ await StatusBarControl.setNetworkActivityIndicatorVisible(true);
 The `getHeight` getter method will return the height of the status bar.
 
 ```dart
-double height = await StatusBarControl.getHeight
+double height = await StatusBarControlPlus.getHeight
 ```
 
 ## Bonus Methods
@@ -178,7 +195,7 @@ The `setNavigationBarColor` method will set the navigation bar background color.
 | animated  | `bool`  |  false  |    No    | Whether or not to animate the color change. |
 
 ```dart
-await StatusBarControl.setNavigationBarColor(Colors.green, animated:true);
+await StatusBarControlPlus.setNavigationBarColor(Colors.green, animated:true);
 ```
 
 #### setNavigationBarStyle
@@ -191,7 +208,7 @@ The `setNavigationBarStyle` method will set the navigation bar theme.
 | style     | `NavigationBarStyle` |  none   |   Yes    | The navigation bar theme to use for styling, can either be light, dark, default. |
 
 ```dart
-await StatusBarControl.setNavigationBarStyle(NavigationBarStyle.DARK);
+await StatusBarControlPlus.setNavigationBarStyle(NavigationBarStyle.DARK);
 ```
 
 #### setFullscreen
@@ -204,7 +221,7 @@ The `setFullscreen` method will set the app in fullscreen mode.
 | fullscreen | `bool` |  none   |   Yes    | Whether or not to set the app on fullscreen mode. |
 
 ```dart
-await StatusBarControl.setNavigationBarStyle(NavigationBarStyle.DARK);
+await StatusBarControlPlus.setNavigationBarStyle(NavigationBarStyle.DARK);
 ```
 
 ## Enums
